@@ -5,11 +5,20 @@
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
-      <dt>Genre</dt>
-      <dd><%= @user_book.genre %></dd>
+      <dt>Image</dt>
+      <dd><%= image_tag @user_book.image %></dd>
+
+      <dt>Title</dt>
+      <dd><%= @user_book.title %></dd>
 
       <dt>Author</dt>
       <dd><%= @user_book.author %></dd>
+
+      <dt>Genre</dt>
+      <dd><%= @user_book.genre %></dd>
+
+      <dt>Rating</dt>
+      <dd><%= @user_book.rating %></dd>
 
       <dt>User</dt>
       <dd><%= @user_book.user_id %></dd>
@@ -20,14 +29,6 @@
       <dt>Notes</dt>
       <dd><%= @user_book.notes %></dd>
 
-      <dt>Rating</dt>
-      <dd><%= @user_book.rating %></dd>
-
-      <dt>Image</dt>
-      <dd><%= @user_book.image %></dd>
-
-      <dt>Title</dt>
-      <dd><%= @user_book.title %></dd>
 
     </dl>
 
