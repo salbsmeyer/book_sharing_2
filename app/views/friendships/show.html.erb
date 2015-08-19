@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Friendship #<%= @friendship.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>Receiver</dt>
+      <dd><%= @friendship.receiver_id %></dd>
+
+      <dt>Sender</dt>
+      <dd><%= @friendship.sender_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/friendships" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/friendships/<%= @friendship.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_friendship/<%= @friendship.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
