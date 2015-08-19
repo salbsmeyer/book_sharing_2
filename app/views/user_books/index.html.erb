@@ -20,7 +20,7 @@
         <th>Actions</th>
       </tr>
 
-      <% @user_books.each do |user_book| %>
+      <% UserBook.where(:user_id => @user_id) do |user_book| %>
       <tr>
         <td><%= image_tag user_book.image %></td>
         <td><%= user_book.title %></td>
@@ -45,7 +45,6 @@
 <div class="page-header">
   <h1>
     All Available Books
-    <a href="/user_books/new" class="btn btn-lg btn-success">New User book</a>
   </h1>
 </div>
 

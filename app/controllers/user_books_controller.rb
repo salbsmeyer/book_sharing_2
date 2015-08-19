@@ -3,6 +3,10 @@ class UserBooksController < ApplicationController
     @user_books = UserBook.all
   end
 
+  def availble_book
+    @user_book.available = true
+  end
+
   def show
     @user_book = UserBook.find(params[:id])
   end
