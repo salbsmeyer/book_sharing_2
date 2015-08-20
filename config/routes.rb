@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   # BORROW
   get "/user_books/borrow/:id", :controller => "user_books", :action => "borrow"
   post "/update_user_book/:id", :controller => "user_books", :action => "update"
+
+  # MY INFO
+  get"/user_books/my_info/", :controller => "user_books", :action => "my_info"
   #------------------------------
 
   # Routes for the Friendship resource:

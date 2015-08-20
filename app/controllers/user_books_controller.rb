@@ -7,6 +7,10 @@ class UserBooksController < ApplicationController
     @user_book.available = true
   end
 
+  def my_info
+    @user_book = UserBook.find(params[:id])
+  end
+
   def show
     @user_book = UserBook.find(params[:id])
   end
@@ -69,5 +73,7 @@ def user
 
   @user_book.username = params [:username]
 end
+
+
 
 end
