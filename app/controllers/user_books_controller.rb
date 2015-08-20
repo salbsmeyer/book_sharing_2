@@ -84,10 +84,10 @@ end
 
 def return
   @user_book = UserBook.find(params[:id])
-
   @user_book.available = true
+  @user_book.save
 
-  redirect_to "/user_books", :notice => "Book returned"
+  redirect_to "/user_books", :notice => "Book returned!"
 end
 
 

@@ -18,9 +18,11 @@ Rails.application.routes.draw do
   # BORROW
   get "/user_books/borrow/:id", :controller => "user_books", :action => "borrow"
 
+  #RETURN
+  get "/user_book/return/:id", :controller => "user_books", :action => "return"
 
   # MY INFO
-  get"/users/show/", :controller => "user_books", :action => "my_info"
+  get "/users/show/", :controller => "user_books", :action => "my_info"
   #------------------------------
 
   # Routes for the Friendship resource:
@@ -42,6 +44,9 @@ Rails.application.routes.draw do
 
   devise_for :borrows
   devise_for :users
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -140,13 +140,13 @@
         <td><%= user_book.genre %></td>
         <td><%= user_book.rating %> out of 5</td>
         <td><%= user_book.user.email %></td>
-        <td>"<%= user_book.borrows %>""</td>
+        <td>"<%= user_book.borrower %>""</td>
         <td><%= user_book.available %></td>
         <td><%= user_book.notes %></td>
         <td>
           <a href="/user_books/<%= user_book.id %>" class="btn btn-primary">Show</a>
           <a href="/delete_user_book/<%= user_book.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-          <a href="/user_books/borrow/<%= user_book.id %>" class="btn btn-warning">Return</a>
+          <a href="/user_book/return/<%= user_book.id %>" class="btn btn-warning">Return</a>
         </td>
       </tr>
       <% end %>
