@@ -8,7 +8,7 @@ class UserBooksController < ApplicationController
   end
 
   def my_info
-    @user_book = UserBook.find(params[:id])
+    @user_book = UserBook.find(params[:current_user])
   end
 
   def show
@@ -65,13 +65,29 @@ class UserBooksController < ApplicationController
 
     @user_book.destroy
 
-    redirect_to "/user_books", :notice => "User book deleted."
+    redirect_to "/user_books", :notice => "Book deleted."
   end
 
 def user
   @user = User.find(params[:id])
 
   @user_book.username = params [:username]
+end
+
+def borrow
+    @user_book = UserBook.find(params[:id])
+    @user_book.available = false
+    @user_book.save
+
+    redirect_to "/user_books", :notice => "Book borrowed!"
+end
+
+def return
+  @user_book = UserBook.find(params[:id])
+
+  @user_book.available = true
+
+  redirect_to "/user_books", :notice => "Book returned"
 end
 
 

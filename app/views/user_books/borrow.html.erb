@@ -70,7 +70,7 @@
           Borrower
         </label>
 
-      <%= select_tag(:user_id, options_from_collection_for_select(Borrow.all, :id, :username, @user), :class => "form-control") %>
+      <%= select_tag(:borrower, options_from_collection_for_select(Borrow.all, :id, :username, @user), :class => "form-control") %>
       </div>
 
       <!-- Label and input for available -->

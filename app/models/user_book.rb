@@ -1,9 +1,7 @@
 class UserBook < ActiveRecord::Base
 
   belongs_to :user
+  has_many :borrows
 
-  def availble_book
-    @user_book.available = true
-  end
 
 end

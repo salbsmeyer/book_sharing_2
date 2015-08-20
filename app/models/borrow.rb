@@ -4,7 +4,8 @@ class Borrow < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-belongs_to :borrower , :class_name => "User", :foreign_key => "borrower_id"
-belongs_to :borrower , :class_name => "User", :foreign_key => "lender_id"
+belongs_to :borrower, :class_name => "User", :foreign_key => "borrower_id"
+belongs_to :lender, :class_name => "User", :foreign_key => "lender_id"
 belongs_to :user_book
+
 end
