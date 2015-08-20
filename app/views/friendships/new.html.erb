@@ -24,7 +24,7 @@
           Receiver
         </label>
 
-        <%= select_tag(:receiver_id, options_from_collection_for_select(User.all, :id, :username, @friendship.receiver_id), :class => "form-control") %>
+        <%= select_tag(:receiver_id, options_from_collection_for_select(User.all, :id, :email, @friendship.receiver_id), :class => "form-control") %>
       </div>
 
       <!-- Label and input for sender_id -->
@@ -33,7 +33,7 @@
           Sender
         </label>
 
-      <%= select_tag(:sender_id, options_from_collection_for_select(User.all, :id, :username, @friendship.sender_id), :class => "form-control") %>
+      <%= select_tag(:sender_id, options_from_collection_for_select(User.all, :id, :email, @friendship.sender_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">

@@ -8,7 +8,7 @@ class UserBooksController < ApplicationController
   end
 
   def my_info
-    @user_book = UserBook.find(params[:current_user])
+    render "/users/show"
   end
 
   def show

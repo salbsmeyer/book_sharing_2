@@ -14,10 +14,10 @@
         <th>Actions</th>
       </tr>
 
-        <% Friendship.where(:sender_id => :current_user) do |my_friendship| %>
+        <% Friendship.where(:receiver_id => current_user.id).each do |friendship| %>
       <tr>
-        <td><%= my_friendship.receiver_id %></td>
-        <td><%= my_friendship.sender_id %></td>
+        <td><%= friendship.receiver_id %></td>
+        <td><%= friendship.sender_id %></td>
         <td>
           <a href="/friendships/<%= friendship.id %>" class="btn btn-primary">Show</a>
           <a href="/friendships/<%= friendship.id %>/edit" class="btn btn-warning">Edit</a>
@@ -32,7 +32,6 @@
 <div class="page-header">
   <h1>
     All Friendships
-    <a href="/friendships/new" class="btn btn-lg btn-success">New Friendship</a>
   </h1>
 </div>
 
@@ -51,8 +50,6 @@
         <td><%= friendship.sender_id %></td>
         <td>
           <a href="/friendships/<%= friendship.id %>" class="btn btn-primary">Show</a>
-          <a href="/friendships/<%= friendship.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_friendship/<%= friendship.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
       </tr>
       <% end %>

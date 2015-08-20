@@ -21,8 +21,11 @@ Rails.application.routes.draw do
   #RETURN
   get "/user_book/return/:id", :controller => "user_books", :action => "return"
 
-  # MY INFO
-  get "/users/show/", :controller => "user_books", :action => "my_info"
+
+# MY INFO
+get "/users/show", :controller => "user_books", :action => "my_info"
+
+
   #------------------------------
 
   # Routes for the Friendship resource:
