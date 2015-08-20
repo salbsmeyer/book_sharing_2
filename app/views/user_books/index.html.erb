@@ -79,7 +79,6 @@
   </div>
 </div>
 
-
 <div class="page-header">
   <h1>
     All Borrowed Books
@@ -110,7 +109,7 @@
         <td><%= user_book.genre %></td>
         <td><%= user_book.rating %> out of 5</td>
         <td><%= user_book.user.email %></td>
-        <td>"<%= user_book.last_borrower %>""</td>
+        <td><%= user_book.borrows %></td>
         <td><%= user_book.available %></td>
         <td><%= user_book.notes %></td>
         <td>

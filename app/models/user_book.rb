@@ -2,11 +2,11 @@ class UserBook < ActiveRecord::Base
 
   belongs_to :user
   has_many :borrows
-  has_many :borrower, :through => :borrows
+  has_many :borrowers, :through => :borrows
 
 
   def last_borrower
-    borrower.order("borrow_date").last
+    borrowers.order("borrow_date").last
   end
 
 
