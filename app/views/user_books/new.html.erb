@@ -66,10 +66,10 @@
       <!-- Label and input for user_id -->
       <div class="form-group">
         <label for="user_id" class="control-label">
-          User
+          User:
         </label>
 
-      <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :username, @user), :class => "form-control") %>
+      <%= current_user.email %>
       </div>
 
       <!-- Label and input for available -->
