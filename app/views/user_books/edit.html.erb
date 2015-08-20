@@ -69,7 +69,7 @@
           User
         </label>
 
-        <div><%= user_book.user %></div>
+        <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :email, @user), :class => "form-control") %>
 
       <!-- Label and input for available -->
       <div class="checkbox">
