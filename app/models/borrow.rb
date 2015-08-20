@@ -5,4 +5,6 @@ class Borrow < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 belongs_to :borrower , :class_name => "User", :foreign_key => "borrower_id"
+belongs_to :borrower , :class_name => "User", :foreign_key => "lender_id"
+belongs_to :user_book
 end

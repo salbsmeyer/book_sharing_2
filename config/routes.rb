@@ -14,6 +14,10 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_user_book/:id", :controller => "user_books", :action => "destroy"
+
+  # BORROW
+  get "/user_books/borrow/:id", :controller => "user_books", :action => "borrow"
+  post "/update_user_book/:id", :controller => "user_books", :action => "update"
   #------------------------------
 
   # Routes for the Friendship resource:

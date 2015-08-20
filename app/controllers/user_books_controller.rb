@@ -63,4 +63,11 @@ class UserBooksController < ApplicationController
 
     redirect_to "/user_books", :notice => "User book deleted."
   end
+
+def user
+  @user = User.find(params[:id])
+
+  @user_book.username = params [:username]
+end
+
 end

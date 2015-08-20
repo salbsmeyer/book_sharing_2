@@ -18,13 +18,22 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for genre -->
+      <!-- Label and input for image -->
       <div class="form-group">
-        <label for="genre" class="control-label">
-          Genre
+        <label for="image" class="control-label">
+          Image
         </label>
 
-        <input type="text" id="genre" name="genre" placeholder="Genre" class="form-control" value="<%= @user_book.genre %>">
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @user_book.image %>">
+      </div>
+
+      <!-- Label and input for title -->
+      <div class="form-group">
+        <label for="title" class="control-label">
+          Title
+        </label>
+
+        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @user_book.title %>">
       </div>
 
       <!-- Label and input for author -->
@@ -36,13 +45,31 @@
         <input type="text" id="author" name="author" placeholder="Author" class="form-control" value="<%= @user_book.author %>">
       </div>
 
+      <!-- Label and input for genre -->
+      <div class="form-group">
+        <label for="genre" class="control-label">
+          Genre
+        </label>
+
+        <input type="text" id="genre" name="genre" placeholder="Genre" class="form-control" value="<%= @user_book.genre %>">
+      </div>
+
+      <!-- Label and input for rating -->
+      <div class="form-group">
+        <label for="rating" class="control-label">
+          Rating
+        </label>
+
+        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @user_book.rating %>"> out of 5
+      </div>
+
       <!-- Label and input for user_id -->
       <div class="form-group">
         <label for="user_id" class="control-label">
           User
         </label>
 
-        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @user_book.user_id %>">
+      <%= select_tag(:user_id, options_from_collection_for_select(User.all, :id, :username, @user), :class => "form-control") %>
       </div>
 
       <!-- Label and input for available -->
@@ -62,32 +89,6 @@
         <textarea id="notes" name="notes" placeholder="Notes" class="form-control" rows="3"><%= @user_book.notes %></textarea>
       </div>
 
-      <!-- Label and input for rating -->
-      <div class="form-group">
-        <label for="rating" class="control-label">
-          Rating
-        </label>
-
-        <input type="text" id="rating" name="rating" placeholder="Rating" class="form-control" value="<%= @user_book.rating %>">
-      </div>
-
-      <!-- Label and input for image -->
-      <div class="form-group">
-        <label for="image" class="control-label">
-          Image
-        </label>
-
-        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @user_book.image %>">
-      </div>
-
-      <!-- Label and input for title -->
-      <div class="form-group">
-        <label for="title" class="control-label">
-          Title
-        </label>
-
-        <input type="text" id="title" name="title" placeholder="Title" class="form-control" value="<%= @user_book.title %>">
-      </div>
 
       <button class="btn btn-success">
         Create User Book

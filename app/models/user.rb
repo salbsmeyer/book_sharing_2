@@ -5,5 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 has_many :book , :class_name => "Borrow", :foreign_key => "borrower_id"
-has_many :user_s_books , :class_name => "UserBook", :foreign_key => "user_id"
+has_many :user_books , :class_name => "UserBook", :foreign_key => "user_id"
+
 end

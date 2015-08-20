@@ -1,13 +1,15 @@
 <div class="page-header">
-  <h3>User Book #<%= @user_book.id %></h3>
+  <h3><%= @user_book.user.username %>'s Book #<%= @user_book.id %></h3>
 </div>
 
 <div class="row">
   <div class="col-md-12">
     <dl class="dl-horizontal">
       <dt>Image</dt>
-      <dd><%= image_tag @user_book.image %></dd>
+      <td><img src= "<%= @user_book.image %>" width="170"></td>
+</dl>
 
+<dl class="dl-horizontal">
       <dt>Title</dt>
       <dd><%= @user_book.title %></dd>
 
@@ -18,7 +20,7 @@
       <dd><%= @user_book.genre %></dd>
 
       <dt>Rating</dt>
-      <dd><%= @user_book.rating %></dd>
+      <dd><%= @user_book.rating %> out of 5</dd>
 
       <dt>User</dt>
       <dd><%= @user_book.user_id %></dd>
@@ -28,9 +30,8 @@
 
       <dt>Notes</dt>
       <dd><%= @user_book.notes %></dd>
+</dl>
 
-
-    </dl>
 
     <div class="btn-group btn-group-justified">
       <a href="/user_books" class="btn btn-primary">
