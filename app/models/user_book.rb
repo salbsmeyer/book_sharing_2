@@ -5,4 +5,9 @@ class UserBook < ActiveRecord::Base
   has_many :borrower, :through => :borrows
 
 
+  def last_borrower
+    borrower.order("borrow_date").last
+  end
+
+
 end

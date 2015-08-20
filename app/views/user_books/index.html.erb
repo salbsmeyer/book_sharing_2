@@ -1,7 +1,7 @@
 <div class="page-header">
   <h1>
     My Books
-    <a href="/user_books/new" class="btn btn-lg btn-success">Add New Book</a>
+    <a href="/user_books/new" class="btn btn-med btn-success">Add New Book</a>
   </h1>
 </div>
 
@@ -14,7 +14,6 @@
         <th>Author</th>
         <th>Genre</th>
         <th>Rating</th>
-        <th>User</th>
         <th>Available</th>
         <th>Notes</th>
         <th>Actions</th>
@@ -27,7 +26,6 @@
         <td><%= user_book.author %></td>
         <td><%= user_book.genre %></td>
         <td><%= user_book.rating %> out of 5</td>
-        <td><%= user_book.user.email %></td>
         <td><%= user_book.available %></td>
         <td><%= user_book.notes %></td>
         <td>
@@ -58,9 +56,8 @@
         <th>Author</th>
         <th>Genre</th>
         <th>Rating</th>
-        <th>User</th>
+        <th>Owner</th>
         <th>Available</th>
-        <th>Notes</th>
         <th>Actions</th>
       </tr>
   <% UserBook.where(:available => true).each do |user_book| %>
@@ -72,11 +69,8 @@
         <td><%= user_book.rating %> out of 5</td>
         <td><%= user_book.user.email %></td>
         <td><%= user_book.available %></td>
-        <td><%= user_book.notes %></td>
         <td>
           <a href="/user_books/<%= user_book.id %>" class="btn btn-primary">Show</a>
-          <a href="/user_books/<%= user_book.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_user_book/<%= user_book.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
           <a href="/user_books/borrow/<%= user_book.id %>" class="btn btn-warning">Borrow</a>
         </td>
       </tr>
@@ -101,7 +95,7 @@
         <th>Author</th>
         <th>Genre</th>
         <th>Rating</th>
-        <th>User</th>
+        <th>Owner</th>
         <th>Borrower</th>
         <th>Available</th>
         <th>Notes</th>
@@ -116,7 +110,7 @@
         <td><%= user_book.genre %></td>
         <td><%= user_book.rating %> out of 5</td>
         <td><%= user_book.user.email %></td>
-        <td>"<%= user_book.borrower %>""</td>
+        <td>"<%= user_book.last_borrower %>""</td>
         <td><%= user_book.available %></td>
         <td><%= user_book.notes %></td>
         <td>
