@@ -1,12 +1,3 @@
-<!-- Validation failure messages -->
-<% if @user_book.errors.any? %>
-  <% @user_book.errors.full_messages.each do |message| %>
-    <div class="alert alert-dismissable alert-danger">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-      <%= message %>
-    </div>
-  <% end %>
-<% end %>
 
 <div class="page-header">
   <h3>Add User Book</h3>
@@ -52,7 +43,7 @@
         </label>
 
         <input type="text" id="genre" name="genre" placeholder="Genre" class="form-control" value="<%= @user_book.genre %>">
-      </div>
+
 
       <!-- Label and input for rating -->
       <div class="form-group">
@@ -94,7 +85,8 @@
         Create User Book
       </button>
       or
-      <a href="/user_books">Cancel</a>
-    </form>
-  </div>
+<a href="/user_books">Cancel</a>
+
+
 </div>
+</form>

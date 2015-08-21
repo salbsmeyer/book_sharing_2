@@ -101,6 +101,7 @@
         <th>Actions</th>
       </tr>
 
+
       <% UserBook.where(:available => false).each do |user_book| %>
       <tr>
         <td><img src= "<%= user_book.image %>" width="80"></td>
@@ -113,8 +114,6 @@
         <td><%= user_book.available %></td>
         <td><%= user_book.notes %></td>
         <td>
-          <a href="/user_books/<%= user_book.id %>" class="btn btn-primary">Show</a>
-          <a href="/delete_user_book/<%= user_book.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
           <a href="/user_book/return/<%= user_book.id %>" class="btn btn-warning">Return</a>
         </td>
       </tr>
