@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # Routes for the User_book resource:
+
   # CREATE
   get "/user_books/new", :controller => "user_books", :action => "new"
   post "/create_user_book", :controller => "user_books", :action => "create"
